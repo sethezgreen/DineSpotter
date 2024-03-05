@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+    <title>Register/Login</title>
+</head>
+<body>
+    <div class="container">
+        <div class="form">
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <p>{{message}}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+            
+            <form action="/users/create" method="post">
+                <h1>Register</h1>
+                <label>
+                    First Name:
+                    <input type="text" name="first_name">
+                </label>
+                <label>
+                    Last Name:
+                    <input type="text" name="last_name">
+                </label>
+                <label>
+                    Email:
+                    <input type="email" name="email">
+                </label>
+                <label>
+                    Password:
+                    <input type="password" name="password">
+                </label>
+                <label>
+                    Confirm Password:
+                    <input type="password" name="confirm_password">
+                </label>
+                <input type="submit" value="Create">
+            </form>
+        </div>
+        <div class="form">
+            <h1>Login</h1>
+            <form action="/login" method="post">
+                <label>
+                    Email:
+                    <input type="email" name="email">
+                </label>
+                <label>
+                    Password:
+                    <input type="password" name="password" id="password_field">
+                    <!-- <button type="button" onclick="password_field.type='text'">Show</button> -->
+                </label>
+                <input type="submit" value="Login">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+
+<!-- Format for adding images -->
+<!-- <img src="{{ url_for('static', filename='images/img.png') }}"> -->
