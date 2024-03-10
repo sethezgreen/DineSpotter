@@ -1,4 +1,3 @@
-
 from flask_app import app
 from flask_app.config.mysqlconnection import connectToMySQL
 from flask import flash, session
@@ -37,7 +36,7 @@ class User:
                 VALUES (%(first_name)s, %(last_name)s, %(email)s, %(password)s)
                 ;"""
         user_id = connectToMySQL(cls.db).query_db(query, user_data)
-        session['user_id'] = user_id # starts with the user logged in after registering
+        session['id'] = user_id # starts with the user logged in after registering
         # could also save something like user_name in session here
         return user_id
 
@@ -51,6 +50,18 @@ class User:
                 FROM users
                 WHERE email = %(email)s
                 ;"""
+        result = connectToMySQL(cls.db).query_db(query, data)
+        if result:
+            this_user = cls(result[0])
+            return this_user
+        return False
+    
+    @classmethod
+    def get_id(cls, id):
+        data = {'id' : id}
+        query = """ SELECT * FROM users
+                    WHERE id = %(id)s
+                """
         result = connectToMySQL(cls.db).query_db(query, data)
         if result:
             this_user = cls(result[0])
@@ -71,7 +82,7 @@ class User:
         this_user = cls.get_user_by_email(data['email'])
         if this_user:
             if bcrypt.check_password_hash(this_user.password, data['password']):
-                session['user_id'] = this_user.id
+                session['id'] = this_user.id
                 session['first_name'] = this_user.first_name
                 # could also save username into session here as well
                 return True
