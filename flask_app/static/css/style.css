@@ -65,7 +65,6 @@
 
 /* ----------------- Backgrounds ---------------------- */
 .main_background{
-    /* background-image: url(images/restaurant2.png); */
     background-image: url(../images/restaurant.JPEG);
     background-size: cover;
     /* background-position: center; */
