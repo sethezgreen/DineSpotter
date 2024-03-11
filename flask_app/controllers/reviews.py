@@ -4,6 +4,7 @@ from flask_app.models import user
 from flask_app.models import review
 
 @app.route('/reviews/<int:id>')
+@app.route('/reviews/<int:id>')
 def show_review(id):
     if 'id' not in session: return redirect('/')
     # this_review = review.Review.get_id(id)
