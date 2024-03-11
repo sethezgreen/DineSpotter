@@ -9,7 +9,7 @@ from flask_app.models import user # import entire file, rather than class, to av
 @app.route('/users/create', methods=["POST"])
 def create_user():
     if user.User.create_user(request.form):
-        return redirect('/') # this would redirect to the display page
+        return redirect('/users/home') # this would redirect to the display page
     return redirect('/')
 
 
@@ -20,9 +20,9 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/users/main')
+@app.route('/users/home')
 def users_main():
-    if 'user_id' not in session: return redirect('/')
+    if 'id' not in session: return redirect('/')
     return render_template('home.html')
 
 
@@ -39,10 +39,10 @@ def users_main():
 @app.route('/login', methods=["POST"])
 def login():
     if user.User.login(request.form):
-        return redirect('/users/main')
+        return redirect('/users/home')
     return redirect('/')
 
-@app.route('/logout')
+@app.route('/users/logout')
 def logout():
     session.clear()
     return redirect('/')
