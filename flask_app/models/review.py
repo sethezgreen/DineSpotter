@@ -1,6 +1,6 @@
 from flask_app import app
 from flask_app.config.mysqlconnection import connectToMySQL
-from flask import flash
+from flask import flash, session
 from flask_app.models.user import User
 
 class Review:
@@ -20,26 +20,32 @@ class Review:
     def new_review(cls,data):
         if not cls.validate_review(data):
             return False
+        data = data.copy()
+        data['user_id'] = session['id']
         query = """ INSERT INTO reviews(user_id, restaurant, location, item_ordered, item_review, service_review, description) 
                     VALUES(%(user_id)s, %(restaurant)s, %(location)s, %(item_ordered)s, %(item_review)s, %(service_review)s, %(description)s)
                 ;"""
         return connectToMySQL(cls.db).query_db(query, data)
     
     @classmethod
-    def get_id(cls,id):
-        query = """ SELECT * FROM reviews
-                    JOIN users on reviews.user_id = users.id
-                    WHERE reviews.id = %(id)s
+    def get_review_by_id(cls,id):
+        query = """ 
+                SELECT * 
+                FROM reviews
+                JOIN users on reviews.user_id = users.id
+                WHERE reviews.id = %(id)s
                 ;"""
         data = {'id':id}
         results = connectToMySQL(cls.db).query_db(query, data)[0]
         review = Review(results)
         review.user = User({
-            'id':results['id'],
+            'id':results['users.id'],
             'first_name':results['first_name'],
             'last_name':results['last_name'],
             'email':results['email'],
-            'password':results['password']
+            'password':results['password'],
+            'created_at': results['users.created_at'],
+            'updated_at': results['users.updated_at']
         })
         return review
     
@@ -64,8 +70,8 @@ class Review:
     
     @classmethod
     def edit_review(cls,id):
-        # if not cls.validate_review(id):
-        #     return False
+        if not cls.validate_review(id):
+            return False
         query = """ UPDATE reviews
                     SET restaurant = %(restaurant)s,location = %(location)s,item_ordered = %(item_ordered)s,item_review = %(item_review)s,service_review = %(service_review)s,description = %(description)s
                     WHERE id = %(id)s 
@@ -101,7 +107,11 @@ class Review:
         elif len(data['item_review']) < 1:
                 flash('Please rate item from 1-5')
                 is_valid = False
-        if 1 > data['service_review'] > 5:
+        if isinstance(data['service_review'], int):
+            if 1 > data['service_review'] > 5:
+                flash('Please rate item from 1-5')
+                is_valid = False
+        elif  len(data['service_review']) < 1:
             flash('Please rate service from 1-5')
             is_valid = False
         if len(data['description']) < 1:
