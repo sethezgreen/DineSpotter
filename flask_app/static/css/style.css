@@ -1,7 +1,249 @@
-.container {
+* {
+    padding: 0;
+}
+ /* --------------- STAR RATING - ITEM - -------------- */
+.item_review {
+    display: flex;
+    flex-direction: row-reverse; /*Stars will be displayed from right to left */
+}
+
+.item_review input {
+    display: none;
+}
+
+.item_review label {
+    font-size: 30px;
+    cursor: pointer;
+    color: #dddddd;
+    order: 5; /* Initially, the first star is positioned last */
+}
+
+.item_review label:before {
+    content: '★';
+}
+
+.item_review input:checked ~ label {
+    color: rgb(255, 187, 0);
+}
+
+.item_review input:checked ~ label:before {
+    content: '★';
+}
+
+
+
+/* --------------- STAR RATING - SERVICE -  -------------- */
+.service_review {
+    display: flex;
+    flex-direction: row-reverse; /* Stars will be displayed from right to left */
+}
+
+.service_review input {
+    display: none;
+}
+
+.service_review label {
+    font-size: 30px;
+    cursor: pointer;
+    color: #dddddd;
+    order: 5; /* Initially, the first star is positioned last */
+}
+
+.service_review label:before {
+    content: '★';
+}
+
+.service_review input:checked ~ label {
+    color: rgb(255, 187, 0);
+}
+
+.service_review input:checked ~ label:before {
+    content: '★';
+} 
+
+
+
+/* ----------------- Backgrounds ---------------------- */
+.main_background{
+    /* background-image: url(images/restaurant2.png); */
+    background-image: url(../images/restaurant.JPEG);
+    background-size: cover;
+    /* background-position: center; */
+}
+
+.write_background, .edit_background{
+    background-image: url(../images/restaurant3.jpeg);
+    background-size: cover;
+}
+
+
+
+/* ----------------- Containers ---------------------- */
+.image_header {
+    padding: 20px;
+    border-radius: 25px;
+    width: 40%;
+}
+
+.container_write_review {
+    /* margin: 0 auto; */
+    justify-content: center;
     display: flex;
 }
 
-label {
-    display: block;
+.form_container {
+    margin-top: 15px;
+    /* display: grid; */
+    /* grid-template-columns: 2fr 1fr;  */
+    gap: 10px; 
+    border: 3px solid #000000;
+    background-image: url(../images/content_background1.jpg);
+    background-size: cover;
+    border-radius: 10px;
+}
+
+
+
+/* ----------------- Buttons ---------------------- */
+.button_logout {
+    margin: 5px;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 5px 5px 5px black;
+    text-decoration: none;
+}
+
+.button_dinespotter {
+    margin: 5px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: zoom-in;
+    box-shadow: 5px 5px 5px black;
+    text-decoration: none;
+}
+
+.button_my_page{
+    margin: 5px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 5px 5px 5px black;
+    border: 5 solid black;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.button_submit_review{
+    margin: 5px;
+background-color: #c8b7a3;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 5px 5px 5px black;
+    border: none;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.button_single {
+    margin: 20px;
+    margin-top: 0px;
+}
+
+
+
+/* ----------------- Headers ---------------------- */
+.header_main {
+    margin-left: 0px;
+    /* margin: 10px; */
+    margin-top: 5px;
+    margin-bottom: 0px;
+    padding: 5px;
+    padding-left: 0px;
+    display: inline-flex;
+    /* flex-direction: row; */
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.40);
+    
+}
+
+.header_buttons {
+    /* background-color: aqua; */
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.h1_greeting {
+    color: white;
+    text-shadow: 3px, 3px, 4px, black;
+}
+
+
+/* ----------------- IMAGES ---------------------- */
+.logo {
+    width: 100px;
+    /* background-color: blue; */
+}
+
+.my_reviews {
+    width: 100px
+}
+
+.logout {
+    width: 80px;
+}
+
+
+/* ----------------- FORM ELEMENTS ---------------------- */
+.create_form_field {
+    margin: 15px;
+    padding: 10px;
+    display: flex;
+    font-weight: bold;
+    background-color: #c8b7a3e8;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px black;
+}
+
+.create_form_field_description {
+    margin: 15px;
+    padding: 10px;
+    display: flex;
+    font-weight: bold;
+    background-color: #c8b7a3e8;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px black;
+}
+
+.create_form_field_text {
+    margin-right: 15px;
+}
+
+.create_form_field_input {
+    size: 350px;
+}
+
+.form_field_input {
+    size: 66%;
+}
+
+
+
+/* ----------------- FLASH MESSAGES -------------------- */
+.flash_messages_cont {
+    margin-top: 5px;
+    padding: 2px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: small;
+}
+
+.image_messages {
+    margin: 1px;
+    padding: 3px;
 }
