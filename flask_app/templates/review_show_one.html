@@ -8,5 +8,9 @@
 <body>
     <h1>THIS IS OUR SHOW ONE REVIEW PAGE</h1>
     <h2>UNDER CONSTRUCTION</h2>
+    <p>{{review.restaurant}}</p>
+    {% if review.user_id == session.id %}
+        <p>Testing session id validation</p>
+    {% endif %}
 </body>
 </html>
