@@ -3,7 +3,7 @@ from flask_app.controllers import users, reviews #controllers go here, if you ad
 # This is where Flask's thought process starts. The request enters here, then goes to the controller above which has a matching route.
 
 if __name__=="__main__":   
-    app.run(debug=True) 
+    app.run(debug=True, host="localhost", port=8000)
     # On line six you can change the port number.
 
 # debug needs to be set to False when deployed.
