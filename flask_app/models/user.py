@@ -37,7 +37,7 @@ class User:
                 ;"""
         user_id = connectToMySQL(cls.db).query_db(query, user_data)
         session['id'] = user_id # starts with the user logged in after registering
-        # could also save something like user_name in session here
+        session['first_name'] = user_data['first_name']
         return user_id
 
     # Read Users Models
@@ -84,7 +84,6 @@ class User:
             if bcrypt.check_password_hash(this_user.password, data['password']):
                 session['id'] = this_user.id
                 session['first_name'] = this_user.first_name
-                # could also save username into session here as well
                 return True
         flash("Invalid Login Information")
         return False
