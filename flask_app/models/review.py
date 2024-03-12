@@ -28,20 +28,24 @@ class Review:
         return connectToMySQL(cls.db).query_db(query, data)
     
     @classmethod
-    def get_id(cls,id):
-        query = """ SELECT * FROM reviews
-                    JOIN users on reviews.user_id = users.id
-                    WHERE reviews.id = %(id)s
+    def get_review_by_id(cls,id):
+        query = """ 
+                SELECT * 
+                FROM reviews
+                JOIN users on reviews.user_id = users.id
+                WHERE reviews.id = %(id)s
                 ;"""
         data = {'id':id}
         results = connectToMySQL(cls.db).query_db(query, data)[0]
         review = Review(results)
         review.user = User({
-            'id':results['id'],
+            'id':results['users.id'],
             'first_name':results['first_name'],
             'last_name':results['last_name'],
             'email':results['email'],
-            'password':results['password']
+            'password':results['password'],
+            'created_at': results['users.created_at'],
+            'updated_at': results['users.updated_at']
         })
         return review
     

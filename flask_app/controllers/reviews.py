@@ -4,11 +4,14 @@ from flask_app.models import user
 from flask_app.models import review
 
 @app.route('/reviews/<int:id>')
+@app.route('/reviews/<int:id>')
 def show_review(id):
     if 'id' not in session: return redirect('/')
-    this_review = review.Review.get_id(id)
-    user_id = {'id':session['id']}
-    return render_template('review_show_one.html', review = this_review, user = user.User.get_id(user_id))
+    # this_review = review.Review.get_id(id)
+    # user_id = {'id':session['id']}
+    # return render_template('review_show_one.html', review = this_review, user = user.User.get_id(user_id))
+    this_review = review.Review.get_review_by_id(id)
+    return render_template('review_show_one.html', review = this_review)
 
 @app.route('/reviews/new')
 def new_review():
