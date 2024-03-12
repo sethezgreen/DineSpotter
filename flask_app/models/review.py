@@ -59,11 +59,13 @@ class Review:
         for result in results:
             review = Review(result)
             review.user = User({
-                'id':result['id'],
-            'first_name':result['first_name'],
-            'last_name':result['last_name'],
-            'email':result['email'],
-            'password':result['password']
+                'id':result['users.id'],
+                'first_name':result['first_name'],
+                'last_name':result['last_name'],
+                'email':result['email'],
+                'password':result['password'],
+                'created_at':result['users.created_at'],
+                'updated_at':result['users.updated_at']
             })
             reviews.append(review)
         return reviews

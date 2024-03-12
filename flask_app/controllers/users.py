@@ -1,6 +1,6 @@
 from flask_app import app
 from flask import render_template, redirect, request, session
-from flask_app.models import user # import entire file, rather than class, to avoid circular imports
+from flask_app.models import user, review # import entire file, rather than class, to avoid circular imports
 # As you add model files add them the the import above
 # This file is the second stop in Flask's thought process, here it looks for a route that matches the request
 
@@ -23,7 +23,8 @@ def index():
 @app.route('/users/home')
 def users_main():
     if 'id' not in session: return redirect('/')
-    return render_template('home.html')
+    reviews = review.Review.get_all()
+    return render_template('home.html', reviews = reviews)
 
 
 # Update Users Controller
@@ -38,6 +39,7 @@ def users_main():
 
 @app.route('/login', methods=["POST"])
 def login():
+    if 'id' in session: return redirect('/users/home')
     if user.User.login(request.form):
         return redirect('/users/home')
     return redirect('/')

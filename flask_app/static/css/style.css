@@ -370,6 +370,7 @@ background-color: #c8b7a3;
     margin: 10px;
     border-collapse: separate;
     border-spacing: 10px 20px;
+    width: 100%;
 }
 
 .img_title {
