@@ -12,7 +12,7 @@
     <header class="header_main">
         <div class="header_buttons">
             <a href="/reviews/new" type="button" class="button_write_review"><img src="/static/images/write_a_review.png" class="write_a_review" alt="write_a_review"></a>
-            <a href="/users/{{ session.id }}/reviews" type="button" class="button_my_page"><img src="/static/images/my_reviews.png" class="my_reviews" alt="my_reviews"></a>
+            <a href="/users/home" type="button" class="button_my_page"><img src="/static/images/my_reviews.png" class="my_reviews" alt="my_reviews"></a>
             <!-- is this meant to go to a read all reviews page? This is meant to go to the Users page showing all their reviews -->
         </div>
 
@@ -49,7 +49,7 @@
 
 
                 <tbody class="table_body">
-                    {% for review in reviews %}
+                    {% for review in user.reviews %}
                     <tr class="table_body_row">
                         <td class="table_data">{{ review.restaurant }}</td>
                         <td class="table_data" >{{ review.item_ordered }}</td>
