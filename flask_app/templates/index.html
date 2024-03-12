@@ -34,54 +34,72 @@
 
         <div class="container_reg">
             <div class="reg_border">
-                    
-                <form class="reg_form" action="/users/create" method="post">
-                    <h1>Register</h1>
-                    <label>
-                        First Name:
-                        <input type="text" name="first_name">
-                    </label>
-                    <label>
-                        Last Name:
-                        <input type="text" name="last_name">
-                    </label>
-                    <label>
-                        Email:
-                        <input type="email" name="email">
-                    </label>
-                    <label>
-                        Password:
-                        <input type="password" name="password">
-                    </label>
-                    <label>
-                        Confirm Password:
-                        <input type="password" name="confirm_password">
-                    </label>
-                    <input type="submit" value="Create">
-                    </form>
+                <div class="container_reg_form">    
+                    <form class="reg_form" action="/users/create" method="post">
+                        
+                        <h1><center>Register</center></h1>
+                        
+                        <div class="reg_border"> 
 
+                            <div class="reg_form_field">
+                                <label class="reg_form_text">First Name:</label>
+                                <input type="text" name="first_name">
+                            </div>
+
+                            <div class="reg_form_field">
+                                <label class="reg_form_text">Last Name:</label>
+                                <input type="text" name="last_name">
+                            </div>    
+                            
+                            <div class="reg_form_field">
+                                <label class="reg_form_text">Email:</label>
+                                <input type="email" name="email">
+                            </div>
+                            
+                            <div class="reg_form_field">
+                                <label class="reg_form_text">Password:</label>
+                                <input type="password" name="password">
+                            </div>
+                            
+                            <div class="reg_form_field">
+                                <label class="reg_form_text">Confirm Password:</label>
+                                <input type="password" name="confirm_password">
+                            </div>
+                        </div>
+                        <div class="button_register">  
+                            <input class="button_inside" type="submit" value="Register">
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
 
 
         <div class="container_login">
             <div class="login_border">
+                <div class="container_login_form"> 
+                    <form class="login_form" action="/login" method="post">
 
-                <form class="login_form" action="/login" method="post">
-                    <h1>Login</h1>
-                    <label>
-                        Email:
-                        <input type="email" name="email">
-                    </label>
-                    <label>
-                        Password:
-                        <input type="password" name="password" id="password_field">
-                        <!-- <button type="button" onclick="password_field.type='text'">Show</button> -->
-                    </label>
-                    <input type="submit" value="Login">
-                </form>
+                        <h1><center>Login</center></h1>
 
+                        <div class="login_border">
+                        
+                            <div class="login_form_field"> 
+                                <label class="login_form_text">Email:</label>
+                                <input type="email" name="email">
+                            </div>
+                            <div class="login_form_field">
+                                <label class="login_form_text">Password:</label>
+                                <input type="password" name="password" id="password_field">
+                            </div>
+                        </div>
+                        
+                            <div class="button_login">
+                                <input type="submit" value="Login">
+                            </div>    
+                    </form>
 
+                </div>
             </div>
         </div>
 
