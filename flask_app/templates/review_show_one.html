@@ -26,12 +26,34 @@
     <div class="container_one">
         <div class="container_one_review">
             <div class="container_review_content">
-                <h2>{{ review.restaurant }}</h2>
-                <h3>{{ review.location }}</h3>
-                <h3>{{ review.item_ordered }}</h3>
-                <h3>{{ review.item_review }}</h3>
-                <h3>{{ review.service_review }}</h3>
-                <h5>{{ review.description }}</h5>
+                
+
+                <div class="review_field">
+                    <p class="review_title">Restaurant Name:</p>
+                    <h2 class="review_info">{{ review.restaurant }}</h2>
+                </div>
+                <div class="review_field">
+                    <p class="review_title">Location:</p>
+                    <h3 class="review_info">{{ review.location }}</h3>
+                </div>
+                <div class="review_field">
+                    <p class="review_title">Item ordered:</p>
+                    <h3 class="review_info">{{ review.item_ordered }}</h3>
+                </div>
+                <div class="review_field">
+                    <p class="review_title">Item Review:</p>
+                    <h4 class="review_info">{{ review.item_review }}/5</h4>
+                </div>
+                <div class="review_field">
+                    <p class="review_title">Service Review:</p>
+                    <h4 class="review_info">{{ review.service_review }}/5</h4>
+                </div>
+                <div class="review_field">
+                    <p class="review_title">Description of Experience:</p>
+                    <h5 class="review_info">{{ review.description }}</h5>
+                </div>
+
+
             </div>
         </div>
     </div>
