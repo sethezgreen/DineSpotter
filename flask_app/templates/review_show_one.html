@@ -38,10 +38,10 @@
 
 
     <div class="container_edit_buttons">
-        {% if session.user_id == review.user_id %}        <!-- jinja if statement goes here for validation -->
+        {% if session.id == review.user_id %}        <!-- jinja if statement goes here for validation -->
             <a href="#" type="button" class="button_edit_review"><img src="/static/images/edit_review.png" class="edit_review" alt="edit_review"></a>
             <a href="#" type="button" class="button_delete_review"><img src="/static/images/delete_review.png" class="delete_review" alt="delete_review"></a>
-            {% endif %}                <!-- endif goes here -->
+        {% endif %} 
     </div>
 </body>
 </html>
