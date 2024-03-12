@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>DineSpotter</title>
+</head>
+<body class="main_background">
+
+    <header class="header_main">
+        <div class="header_buttons">
+            <a href="/reviews/new" type="button" class="button_write_review"><img src="/static/images/write_a_review.png" class="write_a_review" alt="write_a_review"></a>
+            <a href="/users/home" type="button" class="button_my_page"><img src="/static/images/my_reviews.png" class="my_reviews" alt="my_reviews"></a>
+            <!-- is this meant to go to a read all reviews page? This is meant to go to the Users page showing all their reviews -->
+        </div>
+
+        <img class="image_header" src="/static/images/dinespotter.png" alt="dinespotter">
+            
+        <a href="/users/logout" type="button" class="button_logout"><img src="/static/images/logout.png" class="logout" alt="logout"></a>
+    </header>
+
+    <div class="greeting">
+        <h1 class="h1_greeting"><center>Hello, {{ session.first_name }}</center></h1>
+    </div>
+
+    <div class="container_table">
+        <div class="table_border">
+            <table class="dashboard_table">
+
+
+                <thead>
+                    <tr>
+                        <th class="table_header"><center>
+                            <img class="img_title" src="/static/images/restaurant_name.PNG"></center>
+                        </th>    
+                        <th class="table_header"><center>
+                            <img class="img_title" src="/static/images/item_ordered.PNG"></center>
+                        </th>
+                        <th class="table_header"><center>
+                            <img class="img_title" src="/static/images/item_review.PNG"></center>
+                        </th>
+                        <th class="table_header"><center>
+                            <img class="img_title" src="/static/images/service_review.PNG"></center>
+                        </th>
+                    </tr>
+                </thead>
+
+
+                <tbody class="table_body">
+                    {% for review in user.reviews %}
+                    <tr class="table_body_row">
+                        <td class="table_data">{{ review.restaurant }}</td>
+                        <td class="table_data" >{{ review.item_ordered }}</td>
+                        <td class="table_data">{{ review.item_review }}</td>
+                        <td class="table_data">{{ review.service_review }}</td>
+                        <td class="table_data"><a href="/reviews/{{ review.id }}" ><img class="see_review" src="/static/images/see_review.PNG"></a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+                
+
+
+            </table>
+        </div>
+    </div>
+
+</body>
+</html>
