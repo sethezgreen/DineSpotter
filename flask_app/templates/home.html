@@ -10,32 +10,61 @@
 <body class="main_background">
 
     <header class="header_main">
-
         <div class="header_buttons">
+            <a href="/reviews/new" type="button" class="button_write_review"><img src="/static/images/write_a_review.png" class="write_a_review" alt="write_a_review"></a>
             <a href="/users/home" type="button" class="button_my_page"><img src="/static/images/my_reviews.png" class="my_reviews" alt="my_reviews"></a>
-            <!-- is this meant to go to a read all reviews page? -->
+            <!-- is this meant to go to a read all reviews page? This is meant to go to the Users page showing all their reviews -->
         </div>
 
         <img class="image_header" src="/static/images/dinespotter.png" alt="dinespotter">
             
         <a href="/users/logout" type="button" class="button_logout"><img src="/static/images/logout.png" class="logout" alt="logout"></a>
-
     </header>
 
-    <container>
+    <div class="greeting">
+        <h1 class="h1_greeting"><center>Hello, {{ session.first_name }}</center></h1>
+    </div>
 
-        <div class="greeting">
-            <h1 class="h1_greeting"> Hello, {{session.first_name}}</h1>
+    <div class="container_table">
+        <div class="table_border">
+            <table class="dashboard_table">
+
+
+                <thead>
+                    <tr>
+                        <th class="table_header"><center>
+                            <img class="img_title" src="/static/images/restaurant_name.PNG"></center>
+                        </th>    
+                        <th class="table_header"><center>
+                            <img class="img_title" src="/static/images/item_ordered.PNG"></center>
+                        </th>
+                        <th class="table_header"><center>
+                            <img class="img_title" src="/static/images/item_review.PNG"></center>
+                        </th>
+                        <th class="table_header"><center>
+                            <img class="img_title" src="/static/images/service_review.PNG"></center>
+                        </th>
+                    </tr>
+                </thead>
+
+
+                <tbody class="table_body">
+                    <tr class="table_body_row">
+                        <!-- for loop goes here -->
+                        <td class="table_data">This will be to the jinja "restaurant_name"</td>
+                        <td class="table_data" >This needs to be jinja for "item_ordered"</td>
+                        <td class="table_data">This needs to be jinja for "item_review"</td>
+                        <td class="table_data">This needs to be jinja for "service_review</td>
+                        <td class="table_data"><a href="#" ><img class="see_review" src="/static/images/see_review.PNG"></a></td>
+                        <!-- end for loop -->
+                    </tr>
+                </tbody>
+                
+
+
+            </table>
         </div>
-        <h2> ADDING MORE HERE ...</h2>
-
-
-
-
-
-    </container>
-
-
+    </div>
 
 </body>
 </html>

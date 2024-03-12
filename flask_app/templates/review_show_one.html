@@ -2,11 +2,51 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=<h1>, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/style.css') }}">
+    <title>Review</title>
 </head>
-<body>
-    <h1>THIS IS OUR SHOW ONE REVIEW PAGE</h1>
-    <h2>UNDER CONSTRUCTION</h2>
+<body class="main_background">
+
+    <header class="header_main">
+        <div class="header_buttons">
+            <a href="#" type="button" class="button_dinespotter"><img src="/static/images/dinespotter_logo.png" class="logo" alt="dinespotter_logo"></a>
+            <a href="#" type="button" class="button_write_review"><img src="/static/images/write_a_review.png" class="write_a_review" alt="write_a_review"></a>
+        </div>
+
+        <img class="image_header" src="/static/images/dinespotter.png" alt="dinespotter">
+            
+        <a href="/users/logout" type="button" class="button_logout"><img src="/static/images/logout.png" class="logout" alt="logout"></a>
+    </header>
+
+
+
+
+    <div class="container_one">
+        <div class="container_one_review">
+            <div class="container_review_content">
+            {% for this_review in review %}
+                <h2>{{ this_review.restaurant }}</h2>
+                <h3>{{ this_review.location }}</h3>
+                <h3>{{ this_review.item_ordered }}</h3>
+                <h3>{{ this_review.item.review }}</h3>
+                <h3>{{ this_review.service_review }}</h3>
+                <h5>{{ this_review.description }}</h5>
+            {% endfor %}
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container_edit_buttons">
+        {% if session.user_id == review.user_id %}        <!-- jinja if statement goes here for validation -->
+            <a href="#" type="button" class="button_edit_review"><img src="/static/images/edit_review.png" class="edit_review" alt="edit_review"></a>
+            <a href="#" type="button" class="button_delete_review"><img src="/static/images/delete_review.png" class="delete_review" alt="delete_review"></a>
+            {% endif %}                <!-- endif goes here -->
+    </div>
+
+
+
 </body>
 </html>
