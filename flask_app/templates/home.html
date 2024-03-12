@@ -49,15 +49,15 @@
 
 
                 <tbody class="table_body">
+                    {% for review in reviews %}
                     <tr class="table_body_row">
-                        <!-- for loop goes here -->
-                        <td class="table_data">This will be to the jinja "restaurant_name"</td>
-                        <td class="table_data" >This needs to be jinja for "item_ordered"</td>
-                        <td class="table_data">This needs to be jinja for "item_review"</td>
-                        <td class="table_data">This needs to be jinja for "service_review</td>
-                        <td class="table_data"><a href="#" ><img class="see_review" src="/static/images/see_review.PNG"></a></td>
-                        <!-- end for loop -->
+                        <td class="table_data">{{ review.restaurant }}</td>
+                        <td class="table_data" >{{ review.item_ordered }}</td>
+                        <td class="table_data">{{ review.item_review }}</td>
+                        <td class="table_data">{{ review.service_review }}</td>
+                        <td class="table_data"><a href="/reviews/{{ review.id }}" ><img class="see_review" src="/static/images/see_review.PNG"></a></td>
                     </tr>
+                    {% endfor %}
                 </tbody>
                 
 

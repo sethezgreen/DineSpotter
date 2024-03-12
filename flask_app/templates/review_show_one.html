@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <title>Review</title>
 </head>
 <body class="main_background">
@@ -26,14 +26,12 @@
     <div class="container_one">
         <div class="container_one_review">
             <div class="container_review_content">
-            {% for this_review in review %}
-                <h2>{{ this_review.restaurant }}</h2>
-                <h3>{{ this_review.location }}</h3>
-                <h3>{{ this_review.item_ordered }}</h3>
-                <h3>{{ this_review.item.review }}</h3>
-                <h3>{{ this_review.service_review }}</h3>
-                <h5>{{ this_review.description }}</h5>
-            {% endfor %}
+                <h2>{{ review.restaurant }}</h2>
+                <h3>{{ review.location }}</h3>
+                <h3>{{ review.item_ordered }}</h3>
+                <h3>{{ review.item_review }}</h3>
+                <h3>{{ review.service_review }}</h3>
+                <h5>{{ review.description }}</h5>
             </div>
         </div>
     </div>
