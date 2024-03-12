@@ -35,14 +35,17 @@ def generate_review():
 @app.route('/reviews/edit/<int:id>')
 def edit_review(id):
     if 'id' not in session: return redirect('/')
-    user = review.Review.get_id(id)
-    if user.user_id == session['id']:
-        session['review_id'] = id
-        user_id = {'id':session['id']}
-        return render_template('edit_review.html', review = review.Review.get_id(id), user = user_id)
-    # same function is being called twice here
-    else:
-        return redirect('/')
+    # user = review.Review.get_id(id)
+    # if user.user_id == session['id']:
+    #     session['review_id'] = id
+    #     user_id = {'id':session['id']}
+    #     return render_template('edit_review.html', review = review.Review.get_id(id), user = user_id)
+    # # same function is being called twice here
+    # else:
+    #     return redirect('/')
+
+    this_review = review.Review.get_review_by_id(id)
+    return render_template('edit_review.html', review = this_review)
     
 @app.route('/reviews/update', methods=['POST'])
 def update_review():
@@ -58,10 +61,9 @@ def update_review():
 
 @app.route('/reviews/delete/<int:id>')
 def delete_review(id):
-    if 'id' not in session:
-        return redirect('/')
-    this_review = review.Review.get_id(id)
+    if 'id' not in session: return redirect('/')
+    this_review = review.Review.get_review_by_id(id)
     if this_review.user_id != session['id']:
-        return redirect('/')
+        return redirect('/reviews/{id}')
     review.Review.delete_review(id)
-    return redirect('/')
+    return redirect('/users/home')

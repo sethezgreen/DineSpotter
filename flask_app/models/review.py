@@ -1,7 +1,7 @@
 from flask_app import app
 from flask_app.config.mysqlconnection import connectToMySQL
 from flask import flash, session
-from flask_app.models.user import User
+from flask_app.models import user
 
 class Review:
     db = "dine_spotter_schema"
@@ -38,7 +38,7 @@ class Review:
         data = {'id':id}
         results = connectToMySQL(cls.db).query_db(query, data)[0]
         review = Review(results)
-        review.user = User({
+        review.user = user.User({
             'id':results['users.id'],
             'first_name':results['first_name'],
             'last_name':results['last_name'],
@@ -58,7 +58,7 @@ class Review:
         reviews = []
         for result in results:
             review = Review(result)
-            review.user = User({
+            review.user = user.User({
                 'id':result['users.id'],
                 'first_name':result['first_name'],
                 'last_name':result['last_name'],
