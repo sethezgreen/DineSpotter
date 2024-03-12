@@ -65,15 +65,20 @@
 
 /* ----------------- Backgrounds ---------------------- */
 .main_background{
-    background-image: url(../images/restaurant.JPEG);
+    background-image: url(../images/restaurant5.jpg);
     background-size: cover;
-    /* background-position: center; */
 }
 
 .write_background, .edit_background{
     background-image: url(../images/restaurant3.jpeg);
     background-size: cover;
 }
+
+.background_one_review {
+    max-width: 75%;
+    opacity: 60%;
+}
+
 
 
 
@@ -84,28 +89,83 @@
     width: 40%;
 }
 
-.container_write_review {
-    /* margin: 0 auto; */
-    justify-content: center;
+.container_review_write {
     display: flex;
+    justify-content: center;
 }
 
-.form_container {
+.container_form {
     margin-top: 15px;
-    /* display: grid; */
-    /* grid-template-columns: 2fr 1fr;  */
     gap: 10px; 
     border: 3px solid #000000;
-    background-image: url(../images/content_background1.jpg);
+    background-image: url(/static/images/content_background1.jpg);
     background-size: cover;
     border-radius: 10px;
 }
 
+.container_form_inside {
+    padding: 15px;
+}
+
+.container_table {
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.40);
+    margin: 0 auto;
+    margin-top: 10px;
+    padding: 10px;
+    padding-top: 0;
+    width: 75%;
+    display: flex;
+    justify-content: space-around;
+    border: 2px solid #5a677d;
+    border-radius: 10px;
+}
+
+.container_one {
+    margin: 0 auto;
+    width: 75%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container_one_review {
+    width: 75%;
+    min-height: 790px;
+    margin: 15px 15px;
+    background-image: url(/static/images/callout.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center; 
+    opacity: 70%;
+    padding: 30px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container_review_content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 35px;
+    margin-bottom: 150px;
+}
+
+.container_edit_buttons {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 25px;
+}
 
 
-/* ----------------- Buttons ---------------------- */
+
+
+/* ----------------- BUTTONS / LINKS ---------------------- */
 .button_logout {
     margin: 5px;
+    margin-right: 15px;
     padding: 10px;
     border-radius: 5px;
     cursor: pointer;
@@ -151,18 +211,50 @@ background-color: #c8b7a3;
     margin-top: 0px;
 }
 
+.button_write_review {
+    margin: 5px;
+    padding: 10px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 5px 5px 5px black;
+    border: 5 solid black;
+}
+
+.button_edit_review {
+    margin: 5px;
+    padding: 10px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 5px 5px 5px black;
+    border: 5 solid black;
+}
+
+.button_delete_review {
+    margin: 5px;
+    padding: 10px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 5px 5px 5px black;
+    border: 5 solid black;
+}
 
 
-/* ----------------- Headers ---------------------- */
+.link_restaurant {
+    text-decoration: none;
+    font-weight: bold;
+    color: black
+}
+
+
+
+/* ----------------- HEADERS ---------------------- */
 .header_main {
     margin-left: 0px;
-    /* margin: 10px; */
     margin-top: 5px;
     margin-bottom: 0px;
     padding: 5px;
     padding-left: 0px;
     display: inline-flex;
-    /* flex-direction: row; */
     justify-content: space-between;
     align-items: center;
     background-color: rgba(255, 255, 255, 0.40);
@@ -170,32 +262,49 @@ background-color: #c8b7a3;
 }
 
 .header_buttons {
-    /* background-color: aqua; */
     margin-left: 20px;
     display: flex;
     flex-direction: column;
 }
 
 .h1_greeting {
-    color: white;
+    color: black;
     text-shadow: 3px, 3px, 4px, black;
+}
+
+.greeting {
+    margin: 20px 20px;
 }
 
 
 /* ----------------- IMAGES ---------------------- */
 .logo {
     width: 100px;
-    /* background-color: blue; */
 }
 
 .my_reviews {
     width: 100px
 }
 
+.write_a_review {
+    width: 125px;
+}
+
 .logout {
     width: 80px;
 }
 
+.edit_review {
+    width: 100px
+}
+
+.delete_review {
+    width: 125px
+}
+
+.see_review {
+    width:75px;
+}
 
 /* ----------------- FORM ELEMENTS ---------------------- */
 .create_form_field {
@@ -242,7 +351,37 @@ background-color: #c8b7a3;
     font-size: small;
 }
 
-.image_messages {
+.review_messages {
     margin: 1px;
     padding: 3px;
+}
+
+
+
+/* ----------------- TABLES -------------------- */
+.table_border {
+    margin-top: 10px;
+    width: 100%;
+    border: 1px solid black;
+    box-shadow: 4px 4px 10px black;
+}
+
+.dashboard_table {
+    margin: 10px;
+    border-collapse: separate;
+    border-spacing: 10px 20px;
+}
+
+.img_title {
+    max-width: 175px;
+    margin: 10px;
+    padding: 15px;
+}
+
+.table_data {
+    text-align: center;
+}
+
+.table_body_row{
+    padding-top: 10px;
 }

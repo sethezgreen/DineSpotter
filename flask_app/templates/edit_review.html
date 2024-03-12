@@ -30,8 +30,7 @@
     <div class="container_write_review">
 
             <form class="container_form" action='/review/update' method="POST">
-
-                <div class="cont_left_column">
+                <div class="container_form_inside">
             
                     <div class="create_form_field">
                         <label class="create_form_field_text" for="restaurant">Restaurant: </label>
@@ -67,16 +66,16 @@
                     <div class="create_form_field">
                         <p> Service Rating:</p>
                         <div class="service_review">
-                            <input type="radio" id="service_star1" name="service_review" value="1">
+                            <input type="service_star1" id="service_star1" name="service_review" value="1">
                             <label for="star1"></label>
                             <input type="radio" id="service_star2" name="service_review" value="2">
-                            <label for="star2"></label>
+                            <label for="service_star2"></label>
                             <input type="radio" id="service_star3" name="service_review" value="3">
-                            <label for="star3"></label>
+                            <label for="service_star3"></label>
                             <input type="radio" id="service_star4" name="service_review" value="4">
-                            <label for="star4"></label>
+                            <label for="service_star4"></label>
                             <input type="radio" id="service_star5" name="service_review" value="5">
-                            <label for="star5"></label>
+                            <label for="service_star5"></label>
                         </div>
                     </div>
 
@@ -84,20 +83,19 @@
                         <label class="me-2" for="description">Describe The Experience: </label>
                         <textarea id="location" name="description" rows="8" cols="50"></textarea><br>
                     </div>
-
-                </div>
                 
                 <div class="button_single">
                     <input class="button_submit_review" type="submit" value="Submit Your Review">
                 </div>
 
+                </div>
             </form>
             
             <div class="flash_messages_cont">
             {% with messages = get_flashed_messages(category_filter = ['write']) %}
                 {% if messages %}
                     {% for message in messages %}
-                        <p class="image_messages">{{ message }} - </p>
+                        <p class="review_messages">{{ message }} - </p>
                     {% endfor %}
                 {% endif %}
             {% endwith %}
