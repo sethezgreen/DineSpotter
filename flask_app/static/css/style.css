@@ -4,6 +4,7 @@
  /* --------------- STAR RATING - ITEM - -------------- */
 .item_review {
     display: flex;
+    flex-direction: row-reverse; 
 }
 
 .item_review input {
@@ -14,23 +15,28 @@
     font-size: 30px;
     cursor: pointer;
     color: #dddddd;
+    order: 5; /* Initially, the first star is positioned last */
 }
 
 .item_review label:before {
     content: '★';
-    color: #dddddd;
 }
 
-.item_review input:checked + label:before {
+.item_review input:checked ~ label {
     color: rgb(255, 187, 0);
 }
+
+.item_review input:checked ~ label:before {
+    content: '★';
+} 
 
 
 
 /* --------------- STAR RATING - SERVICE -  -------------- */
 .service_review {
     display: flex;
-    flex-direction: row-reverse; /* Stars will be displayed from right to left */
+    flex-direction: row-reverse; 
+    /* Stars will be displayed from right to left */
 }
 
 .service_review input {
