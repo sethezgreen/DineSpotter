@@ -50,31 +50,79 @@
                     <div class="create_form_field">
                         <p> Item Rating:</p>
                         <div class="item_review">
+                            {% if review.item_review == 5 %}
+                            <input type="radio" id="star5" name="item_review" value="5" checked>
+                            {% else %}
                             <input type="radio" id="star5" name="item_review" value="5">
+                            {% endif %}
                             <label for="star5"></label>
+
+                            {% if review.item_review == 4 %}
+                            <input type="radio" id="star4" name="item_review" value="4" checked>
+                            {% else %}
                             <input type="radio" id="star4" name="item_review" value="4">
+                            {% endif %}
                             <label for="star4"></label>
+
+                            {% if review.item_review == 3 %}
+                            <input type="radio" id="star3" name="item_review" value="3" checked>
+                            {% else %}
                             <input type="radio" id="star3" name="item_review" value="3">
+                            {% endif %}
                             <label for="star3"></label>
+
+                            {% if review.item_review == 2 %}
+                            <input type="radio" id="star2" name="item_review" value="2" checked>
+                            {% else %}
                             <input type="radio" id="star2" name="item_review" value="2">
+                            {% endif %}
                             <label for="star2"></label>
+
+                            {% if review.item_review == 1 %}
+                            <input type="radio" id="star1" name="item_review" value="1" checked>
+                            {% else %}
                             <input type="radio" id="star1" name="item_review" value="1">
+                            {% endif %}
                             <label for="star1"></label>
                         </div>
                     </div>
-
+                    
                     <div class="create_form_field">
                         <p> Service Rating:</p>
                         <div class="service_review">
+                            {% if review.service_review == 5 %}
+                            <input type="radio" id="service_star5" name="service_review" value="5" checked>
+                            {% else %}
                             <input type="radio" id="service_star5" name="service_review" value="5">
+                            {% endif %}
                             <label for="service_star5"></label>
+
+                            {% if review.service_review == 4 %}
+                            <input type="radio" id="service_star4" name="service_review" value="4" checked>
+                            {% else %}
                             <input type="radio" id="service_star4" name="service_review" value="4">
+                            {% endif %}
                             <label for="service_star4"></label>
+
+                            {% if review.service_review == 3 %}
+                            <input type="radio" id="service_star3" name="service_review" value="3" checked>
+                            {% else %}
                             <input type="radio" id="service_star3" name="service_review" value="3">
+                            {% endif %}
                             <label for="service_star3"></label>
+
+                            {% if review.service_review == 2 %}
+                            <input type="radio" id="service_star2" name="service_review" value="2" checked>
+                            {% else %}
                             <input type="radio" id="service_star2" name="service_review" value="2">
+                            {% endif %}
                             <label for="service_star2"></label>
+
+                            {% if review.service_review == 1 %}
+                            <input type="radio" id="service_star1" name="service_review" value="1" checked>
+                            {% else %}
                             <input type="radio" id="service_star1" name="service_review" value="1">
+                            {% endif %}
                             <label for="service_star1"></label>
                         </div>
                     </div>
