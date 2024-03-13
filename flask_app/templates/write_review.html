@@ -46,32 +46,32 @@
                 <div class="create_form_field">
                     <p> Item Rating:</p>
                     <div class="item_review">
-                        <input type="radio" id="star1" name="item_review" value="1">
-                        <label for="star1"></label>
-                        <input type="radio" id="star2" name="item_review" value="2">
-                        <label for="star2"></label>
-                        <input type="radio" id="star3" name="item_review" value="3">
-                        <label for="star3"></label>
-                        <input type="radio" id="star4" name="item_review" value="4">
-                        <label for="star4"></label>
                         <input type="radio" id="star5" name="item_review" value="5">
                         <label for="star5"></label>
+                        <input type="radio" id="star4" name="item_review" value="4">
+                        <label for="star4"></label>
+                        <input type="radio" id="star3" name="item_review" value="3">
+                        <label for="star3"></label>
+                        <input type="radio" id="star2" name="item_review" value="2">
+                        <label for="star2"></label>
+                        <input type="radio" id="star1" name="item_review" value="1">
+                        <label for="star1"></label>
                     </div>
                 </div>
 
                 <div class="create_form_field">
                     <p> Service Rating:</p>
                     <div class="service_review">
-                        <input type="radio" id="service_star1" name="service_review" value="1">
-                        <label for="service_star1"></label>
-                        <input type="radio" id="service_star2" name="service_review" value="2">
-                        <label for="service_star2"></label>
-                        <input type="radio" id="service_star3" name="service_review" value="3">
-                        <label for="service_star3"></label>
-                        <input type="radio" id="service_star4" name="service_review" value="4">
-                        <label for="service_star4"></label>
                         <input type="radio" id="service_star5" name="service_review" value="5">
                         <label for="service_star5"></label>
+                        <input type="radio" id="service_star4" name="service_review" value="4">
+                        <label for="service_star4"></label>
+                        <input type="radio" id="service_star3" name="service_review" value="3">
+                        <label for="service_star3"></label>
+                        <input type="radio" id="service_star2" name="service_review" value="2">
+                        <label for="service_star2"></label>
+                        <input type="radio" id="service_star1" name="service_review" value="1">
+                        <label for="service_star1"></label>
                     </div>
                 </div>
 
@@ -88,7 +88,7 @@
         </form>
             
             <div class="flash_messages_cont">
-            {% with messages = get_flashed_messages(category_filter = ['write']) %}
+            {% with messages = get_flashed_messages() %}
                 {% if messages %}
                     {% for message in messages %}
                         <p class="review_messages">{{ message }} - </p>
