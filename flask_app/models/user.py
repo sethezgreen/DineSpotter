@@ -79,6 +79,7 @@ class User:
                 LEFT JOIN reviews
                 ON reviews.user_id = %(id)s
                 WHERE users.id = %(id)s
+                ORDER BY reviews.created_at DESC
                 ;"""
         results = connectToMySQL(cls.db).query_db(query, data)
         this_user = cls(results[0])
