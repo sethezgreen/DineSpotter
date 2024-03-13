@@ -93,13 +93,13 @@ class Review:
     @staticmethod
     def validate_review(data):
         is_valid = True
-        if 1 > len(data['restaurant']) > 45:
+        if len(data['restaurant']) < 1 or len(data['restaurant']) > 45:
             flash('Restaurant name must be between 1-45 characters')
             is_valid = False
-        if 1 > len(data['location']) > 45:
+        if len(data['location']) < 1 or len(data['location']) > 45:
             flash('Location must be between 1-45 characters')
             is_valid = False
-        if 1 > len(data['item_ordered']) > 45:
+        if len(data['item_ordered']) < 1 or len(data['item_ordered']) > 45:
             flash('Item name must be between 1-45 characters')
             is_valid = False
         if 'item_review' in data:
