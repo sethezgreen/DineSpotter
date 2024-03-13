@@ -11,8 +11,8 @@
 
     <header class="header_main">
         <div class="header_buttons">
+            <a href="/users/home" type="button" class="button_dinespotter"><img src="/static/images/dinespotter_logo.png" class="logo" alt="dinespotter_logo"></a>
             <a href="/reviews/new" type="button" class="button_write_review"><img src="/static/images/write_a_review.png" class="write_a_review" alt="write_a_review"></a>
-            <a href="/users/home" type="button" class="button_my_page"><img src="/static/images/my_reviews.png" class="my_reviews" alt="my_reviews"></a>
         </div>
 
         <img class="image_header" src="/static/images/dinespotter.png" alt="dinespotter">
@@ -21,7 +21,7 @@
     </header>
 
     <div class="greeting">
-        <h1 class="h1_greeting"><center>Hello, {{ session.first_name }}</center></h1>
+        <h1 class="h1_greeting"><center>{{ session.first_name }}'s Reviews</center></h1>
     </div>
 
     <div class="container_table">
@@ -54,7 +54,13 @@
                         <td class="table_data" >{{ review.item_ordered }}</td>
                         <td class="table_data">{{ review.item_review }}</td>
                         <td class="table_data">{{ review.service_review }}</td>
-                        <td class="table_data"><a href="/reviews/{{ review.id }}" ><img class="see_review" src="/static/images/see_review.PNG"></a></td>
+                        {% if user.id == session.id %}
+                        <td class="table_data_buttons">
+                            <a class="button_user_reviews" href="/reviews/{{ review.id }}">See Review</a>
+                            <a class="button_user_reviews" href="/reviews/edit/{{ review.id }}">Edit</a>
+                            <a class="button_user_reviews" href="/reviews/delete/{{ review.id }}">Delete</a>
+                        </td>
+                        {% endif %}
                     </tr>
                     {% endfor %}
                 </tbody>

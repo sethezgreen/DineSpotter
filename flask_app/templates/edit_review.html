@@ -14,8 +14,8 @@
     <header class="header_main">
 
         <div class="header_buttons">
-            <a href="#" type="button" class="button_dinespotter"><img src="/static/images/dinespotter_logo.png" class="logo" alt="dinespotter_logo"></a>
-            <a href="#" type="button" class="button_my_page"><img src="/static/images/my_reviews.png" class="my_reviews" alt="my_reviews"></a>
+            <a href="/users/home" type="button" class="button_dinespotter"><img src="/static/images/dinespotter_logo.png" class="logo" alt="dinespotter_logo"></a>
+            <a href="/users/{{ session.id }}/reviews" type="button" class="button_my_page"><img src="/static/images/my_reviews.png" class="my_reviews" alt="my_reviews"></a>
         </div>
 
         <img class="image_header" src="/static/images/update_review.PNG" alt="background">
