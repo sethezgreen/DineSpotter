@@ -352,12 +352,20 @@
 
 .h1_greeting {
     color: black;
-    text-shadow: 3px, 3px, 4px, black;
+    text-shadow: 3px 3px 7px rgb(255, 255, 255);
+}
+
+.h1_greeting2 {
+    text-align: center;
+    color: black;
+    text-shadow: 3px 3px 7px rgb(255, 255, 255);
+    margin: 30px 30px;
 }
 
 .greeting {
     margin: 20px 20px;
 }
+
 
 
 /* ----------------- IMAGES ---------------------- */
@@ -492,10 +500,19 @@
     box-shadow: 4px 4px 10px black;
 }
 
+.flash_border2 {
+    padding-bottom: 20px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.25);
+    border: 1px solid black;
+    box-shadow: 3px 3px 10px black;
+}
+
 .review_messages {
     text-align: center;
     margin: 1px;
     padding: 3px;
+    text-shadow: 3px 3px 1px #c8b7a3e8;
 }
 
 
@@ -561,9 +578,3 @@ text-align: center;
     color: black;
     text-shadow: 3px 3px 3px white;
 }
-
-
-/* ----------------- LOGIN / REGISTRATION -------------------- */
-
-
-

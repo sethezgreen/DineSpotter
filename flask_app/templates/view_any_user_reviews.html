@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <title>Your Reviews</title>
+    <title>First_Name Reviews</title>
 </head>
 <body class="main_background">
 
@@ -20,7 +20,7 @@
         <a href="/users/logout" type="button" class="button_logout"><img src="/static/images/logout.png" class="logout" alt="logout"></a>
     </header>
 
-        <h1 class="h1_greeting2">{{ session.first_name }}'s Reviews</h1>
+    <h1 class="h1_greeting2">(User's first_name)'s Reviews</h1>
 
     <div class="container_table">
         <div class="table_border">
