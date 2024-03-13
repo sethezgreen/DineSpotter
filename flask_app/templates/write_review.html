@@ -18,7 +18,7 @@
 
         <img class="image_header" src="/static/images/write_review.PNG" alt="background">
             
-        <a href="/user/logout" type="button" class="button_logout"><img src="/static/images/logout.png" class="logout" alt="logout"></a>
+        <a href="/users/logout" type="button" class="button_logout"><img src="/static/images/logout.png" class="logout" alt="logout"></a>
 
     </header>
 
@@ -26,6 +26,17 @@
     <div class="container_review_write">
 
         <form class="container_form" action='/reviews/create' method="POST">
+
+            <div class="flash_border2">
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <p class="review_messages">{{message}}</p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            </div>
+
             <div class="container_form_inside">
         
                 <div class="create_form_field">
@@ -86,18 +97,6 @@
 
             </div>  
         </form>
-            
-            <div class="flash_messages_cont">
-            {% with messages = get_flashed_messages() %}
-                {% if messages %}
-                    {% for message in messages %}
-                        <p class="review_messages">{{ message }} - </p>
-                    {% endfor %}
-                {% endif %}
-            {% endwith %}
-            </div>
-
-        <!-- </div> -->
 
     </div>
 
