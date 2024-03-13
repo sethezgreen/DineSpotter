@@ -29,7 +29,7 @@ def users_main():
 @app.route('/users/<int:id>/reviews')
 def users_with_reviews(id):
     this_user = user.User.get_user_with_reviews(id)
-    return render_template('view_user_recipes.html', user = this_user)
+    return render_template('view_user_reviews.html', user = this_user)
 
 # Update Users Controller
 

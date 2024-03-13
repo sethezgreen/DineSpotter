@@ -209,6 +209,7 @@
 .button_register, .button_login {
     margin: 15px auto;
     color: black;
+    background-color: rgba(255, 255, 255, 0.40);
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
@@ -216,6 +217,10 @@
     border: 1px solid black;
     text-decoration: none;
     white-space: nowrap;
+}
+
+.button_container {
+    margin: 15px auto;
 }
 
 .button_logout {
@@ -284,6 +289,17 @@
     border: 5 solid black;
 }
 
+.button_user_reviews {
+    margin: 5px;
+    padding: 10px 10px;
+    border-radius: 5px;
+    color: black;
+    cursor: pointer;
+    box-shadow: 5px 5px 5px black;
+    border: 5 solid black;
+    text-decoration: none;
+}
+
 .button_delete_review {
     margin: 5px;
     padding: 10px 10px;
@@ -341,7 +357,6 @@
 /* ----------------- IMAGES ---------------------- */
 .image_header {
     padding: 10px;
-    /* border-radius: 25px; */
     width: 40%;
 }
 
@@ -372,6 +387,17 @@
 .see_review {
     width:75px;
 }
+
+.edit_image {
+    width: 50%;
+}
+
+.delete_image {
+    width: 50%;
+}
+
+
+
 
 /* ----------------- FORM ELEMENTS ---------------------- */
 .reg_form, .login_form {
@@ -454,6 +480,7 @@
 
 .dashboard_table {
     margin: 10px;
+    padding-right: 15px;
     border-collapse: separate;
     border-spacing: 10px 20px;
     width: 100%;
@@ -471,6 +498,17 @@
 
 .table_body_row{
     padding-top: 10px;
+}
+
+.table_data_see_review {
+    text-align: center;
+    /* margin-right: 10px; */
+}
+
+.table_data_buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 

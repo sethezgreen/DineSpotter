@@ -13,7 +13,6 @@
         <div class="header_buttons">
             <a href="/reviews/new" type="button" class="button_write_review"><img src="/static/images/write_a_review.png" class="write_a_review" alt="write_a_review"></a>
             <a href="/users/{{ session.id }}/reviews" type="button" class="button_my_page"><img src="/static/images/my_reviews.png" class="my_reviews" alt="my_reviews"></a>
-            <!-- is this meant to go to a read all reviews page? This is meant to go to the Users page showing all their reviews -->
         </div>
 
         <img class="image_header" src="/static/images/dinespotter.png" alt="dinespotter">
@@ -55,7 +54,11 @@
                         <td class="table_data" >{{ review.item_ordered }}</td>
                         <td class="table_data">{{ review.item_review }}</td>
                         <td class="table_data">{{ review.service_review }}</td>
-                        <td class="table_data"><a href="/reviews/{{ review.id }}" ><img class="see_review" src="/static/images/see_review.PNG"></a></td>
+                        <td class="table_data_see_review">
+                            <a href="/reviews/{{ review.id }}">
+                                <img class="see_review" src="/static/images/see_review.PNG">
+                            </a>
+                        </td>
                     </tr>
                     {% endfor %}
                 </tbody>
