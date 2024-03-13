@@ -107,9 +107,6 @@ class Review:
                 if 1 > data['item_review'] > 5:
                     flash('Please rate item from 1-5')
                     is_valid = False
-            elif len(data['item_review']) < 1:
-                    flash('Please rate item from 1-5')
-                    is_valid = False
         else:
             flash('Please rate item from 1-5')
             is_valid = False
@@ -118,9 +115,6 @@ class Review:
                 if 1 > data['service_review'] > 5:
                     flash('Please rate service from 1-5')
                     is_valid = False
-            elif  len(data['service_review']) < 1:
-                flash('Please rate service from 1-5')
-                is_valid = False
         else:
             flash('Please rate service from 1-5')
             is_valid = False
