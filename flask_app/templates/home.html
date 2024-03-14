@@ -57,9 +57,9 @@
                         <td class="table_data" >{{ review.item_ordered }}</td>
                         <td class="table_data">{{ review.item_review }}</td>
                         <td class="table_data">{{ review.service_review }}</td>
-                        <td class="table_data"><a href="/users/{{review.user.id}}/reviews">{{ review.user.first_name }}</a></td>
+                        <td class="table_data"><a class="link_restaurant" href="/users/{{review.user.id}}/reviews">{{ review.user.first_name }}</a></td>
                         <td class="table_data_see_review">
-                            <a href="/reviews/{{ review.id }}">
+                            <a  href="/reviews/{{ review.id }}">
                                 <img class="see_review" src="/static/images/see_review.PNG">
                             </a>
                         </td>
