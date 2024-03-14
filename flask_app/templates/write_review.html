@@ -27,15 +27,15 @@
 
         <form class="container_form" action='/reviews/create' method="POST">
 
-            <div class="flash_border2">
             {% with messages = get_flashed_messages() %}
                 {% if messages %}
+                    <div class="flash_border2">
                     {% for message in messages %}
                         <p class="review_messages">{{message}}</p>
                     {% endfor %}
+                    </div>
                 {% endif %}
             {% endwith %}
-            </div>
 
             <div class="container_form_inside">
         

@@ -33,12 +33,6 @@ def edit_review(id):
             return redirect('/users/home')
         return redirect(f'/reviews/edit/{id}')
 
-@app.route('/reviews/update', methods=['POST'])
-def update_review():
-    if review.Review.edit_review(request.form):
-        return redirect('/users/home')
-    return redirect(f'/reviews/edit/{session["review_id"]}')
-
 @app.route('/reviews/delete/<int:id>')
 def delete_review(id):
     if 'id' not in session: return redirect('/')
