@@ -412,7 +412,6 @@
 
 
 
-
 /* ----------------- FORM ELEMENTS ---------------------- */
 .reg_form, .login_form {
     padding: 20px;
@@ -527,7 +526,7 @@
 
 .dashboard_table {
     margin: 10px;
-    padding-right: 15px;
+    padding-right: 25px;
     border-collapse: separate;
     border-spacing: 10px 20px;
     width: 100%;
